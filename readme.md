@@ -1,21 +1,18 @@
-### Opendata University Challenge DPE
-
-Last update : 21/01/2025
+### Auto Insurance Churn Modelisation 
+Last update : 05/02/2025
 
 #### Documentation du projet 
 - Problématique, objectifs, livrables etc.. *(déjà fait - à compléter)*
-- Source : [Opendata university challenge DPE (defis data gouv)](https://defis.data.gouv.fr/defis/diagnostics-de-performance-energetique).
+- Source 1 : [Kaggle - Dataset simulé - Train](https://www.kaggle.com/datasets/merishnasuwal/auto-insurance-churn-analysis-dataset/data).
+- Source 2 : [Hackathon - Dataset réel anonymisé - RGPD](https://www.kaggle.com/code/bhuwanesh340/customer-churn-prediction-weekend-hackathon).
 
 #### Données
-- Périmètre : PARIS 2018 
 - Source du dataset : Worflow data (données croisées) issues :
-    * des [consommations d'électricité d'ENEDIS](https://data.enedis.fr/explore/dataset/consommation-annuelle-residentielle-par-adresse/information/)
-    * de l'API de la Base Nationale des Adresses ([BAN](https://guides.data.gouv.fr/reutiliser-des-donnees/utiliser-les-api-geographiques/utiliser-lapi-adresse/rappel-donnees-adresses))
-    * de la base des [DPE de l'ADEME](https://data.ademe.fr/datasets/dpe-v2-logements-existants)
+    * ...
 - Descriptif du workflow d'extraction <br><br>
-    ![img](docs/pipeline_data_fetching.png)
+    ![img](docs/pipe.png)
     <br><br>
-- Résultats des extracts du workflow par exploitation des API : exemples [ici](ressources/data/)
+- Résultats des extracts du workflow par exploitation des API : exemples [ici](res/data/)
 
 #### Installation du projet (en local)
 
