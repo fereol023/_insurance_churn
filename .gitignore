@@ -1,0 +1,25 @@
+# environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# data
+ressources/data/0_archive/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Jupyter Notebook checkpoints
+notebooks/.ipynb_checkpoints/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+
+# Miscellaneous
+.DS_Store
