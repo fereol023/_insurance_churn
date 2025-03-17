@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/ec67d9e034e743d6abe99db0c42c01d6/artifacts
+end_time: 1742207480432
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: active
+run_id: ec67d9e034e743d6abe99db0c42c01d6
+run_name: rus-scaling-and-LogisticRegression_v2-wo_coord
+run_uuid: ec67d9e034e743d6abe99db0c42c01d6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742206596789
+status: 3
+tags: []
+user_id: gbeno

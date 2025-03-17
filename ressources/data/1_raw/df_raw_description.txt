@@ -1,0 +1,30 @@
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2280321 entries, 0 to 2280320
+Data columns (total 23 columns):
+ #   Column                  Dtype  
+---  ------                  -----  
+ 0   INDIVIDUAL_ID           float64
+ 1   ADDRESS_ID              float64
+ 2   CURR_ANN_AMT            float64
+ 3   DAYS_TENURE             float64
+ 4   CUST_ORIG_DATE          object 
+ 5   AGE_IN_YEARS            float64
+ 6   DATE_OF_BIRTH           object 
+ 7   SOCIAL_SECURITY_NUMBER  object 
+ 8   ACCT_SUSPD_DATE         object 
+ 9   INCOME                  float64
+ 10  HAS_CHILDREN            float64
+ 11  LENGTH_OF_RESIDENCE     float64
+ 12  MARITAL_STATUS          object 
+ 13  HOME_MARKET_VALUE       object 
+ 14  HOME_OWNER              float64
+ 15  COLLEGE_DEGREE          float64
+ 16  GOOD_CREDIT             float64
+ 17  LATITUDE                float64
+ 18  LONGITUDE               float64
+ 19  STREET_ADDRESS          object 
+ 20  CITY                    object 
+ 21  STATE                   object 
+ 22  COUNTY                  object 
+dtypes: float64(13), object(10)
+memory usage: 400.1+ MB

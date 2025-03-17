@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/5ae352cf2a6d44979187d7f6c701b0b1/artifacts
+end_time: 1742208655267
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: active
+run_id: 5ae352cf2a6d44979187d7f6c701b0b1
+run_name: rus-scaling-and-AdaBoost_v2-wo_coord
+run_uuid: 5ae352cf2a6d44979187d7f6c701b0b1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742208430773
+status: 3
+tags: []
+user_id: gbeno

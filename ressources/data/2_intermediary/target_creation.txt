@@ -1,0 +1,3 @@
+
+LOGIQUE : les personnes dont la date est dispo/renseignee sont celles qui ont resilie. Si la date de suspension est manquante (NA) c'est que la personne est toujours en portefeuille.
+On peut donc creer une variable target churn = 1 si la date est renseignee et churn = 0 sinon.

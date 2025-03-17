@@ -77,6 +77,13 @@ def compute_cross_entropies(d, col_pairs):
     
     return cross_entropies
 
+def compute_insights(data):
+    """Afficher en une fois le taux de na, de nulls et l'entropie."""
+    _ = pd.DataFrame(data.isnull().sum(), columns=['null freq'])/data.shape[0]
+    _['na freq'] = data.isna().sum()/data.shape[0]
+    _['entropy'] = pd.DataFrame(compute_entropies(data, data.columns)).set_index('col')['entropy']
+    _ = round(_, 3)
+    return _.sort_values(by='entropy')
 
 @lru_cache(maxsize=1024)
 def normalize_name(colname):

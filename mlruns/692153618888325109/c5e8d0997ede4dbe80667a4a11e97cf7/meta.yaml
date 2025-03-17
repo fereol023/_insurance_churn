@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/c5e8d0997ede4dbe80667a4a11e97cf7/artifacts
+deleted_time: 1741367804584
+end_time: 1741345517306
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: deleted
+run_id: c5e8d0997ede4dbe80667a4a11e97cf7
+run_name: random-undersampling-scaling-RandomForest
+run_uuid: c5e8d0997ede4dbe80667a4a11e97cf7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741345392172
+status: 3
+tags: []
+user_id: gbeno

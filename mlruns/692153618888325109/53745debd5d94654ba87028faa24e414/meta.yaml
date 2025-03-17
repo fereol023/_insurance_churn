@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/53745debd5d94654ba87028faa24e414/artifacts
+deleted_time: 1741367804624
+end_time: 1741340869986
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: deleted
+run_id: 53745debd5d94654ba87028faa24e414
+run_name: random-undersampling-sacling-rfcv
+run_uuid: 53745debd5d94654ba87028faa24e414
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741340771280
+status: 3
+tags: []
+user_id: gbeno

@@ -1,0 +1,18 @@
+digest: b861190e
+name: test set sample
+profile: '{"num_rows": 5, "num_elements": 80}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "COUNTY_0", "required": true},
+  {"type": "long", "name": "MARITAL_STATUS_0", "required": true}, {"type": "long",
+  "name": "CITY_0", "required": true}, {"type": "double", "name": "HOME_MARKET_VALUE",
+  "required": true}, {"type": "double", "name": "CURR_ANN_AMT", "required": true},
+  {"type": "double", "name": "DAYS_TENURE", "required": true}, {"type": "double",
+  "name": "AGE_IN_YEARS", "required": true}, {"type": "double", "name": "INCOME",
+  "required": true}, {"type": "double", "name": "HAS_CHILDREN", "required": true},
+  {"type": "double", "name": "LENGTH_OF_RESIDENCE", "required": true}, {"type": "double",
+  "name": "HOME_OWNER", "required": true}, {"type": "double", "name": "COLLEGE_DEGREE",
+  "required": true}, {"type": "double", "name": "GOOD_CREDIT", "required": true},
+  {"type": "double", "name": "LATITUDE", "required": true}, {"type": "double", "name":
+  "LONGITUDE", "required": true}, {"type": "long", "name": "churn", "required": true}]}'
+source: '{"tags": {"mlflow.user": "gbeno", "mlflow.source.name": "src/pipelines/train.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "3f2025e704dcd92bc135062ffcb0d23ae33d4581"}}'
+source_type: code

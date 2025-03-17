@@ -1,0 +1,6 @@
+destination_id: 76df77154a3e0482d320e09d801e1717
+destination_type: RUN
+source_id: 76df77154a3e0482d320e09d801e1717
+source_type: DATASET
+tags:
+  mlflow.data.context: train set sample

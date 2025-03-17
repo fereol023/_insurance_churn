@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/616095e44b274991abaa3a4084c91380/artifacts
+end_time: 1741351685180
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: active
+run_id: 616095e44b274991abaa3a4084c91380
+run_name: rus-scaling-and-GradientBoosting
+run_uuid: 616095e44b274991abaa3a4084c91380
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741351376906
+status: 3
+tags: []
+user_id: gbeno

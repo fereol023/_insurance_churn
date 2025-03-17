@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/eba6ed9751bb40ec940017058b16e73b/artifacts
+end_time: 1741351218350
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: active
+run_id: eba6ed9751bb40ec940017058b16e73b
+run_name: rus-scaling-and-KNeighbors
+run_uuid: eba6ed9751bb40ec940017058b16e73b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741351100729
+status: 3
+tags: []
+user_id: gbeno

@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/gbeno/Documents/m2_deng/machine_learning/_insurance_churn/mlruns/692153618888325109/224102f562624ac4af12c11d1fe5c718/artifacts
+deleted_time: 1741367804582
+end_time: 1741345382078
+entry_point_name: ''
+experiment_id: '692153618888325109'
+lifecycle_stage: deleted
+run_id: 224102f562624ac4af12c11d1fe5c718
+run_name: random-undersampling-scaling-LogisticRegression
+run_uuid: 224102f562624ac4af12c11d1fe5c718
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741345338620
+status: 3
+tags: []
+user_id: gbeno

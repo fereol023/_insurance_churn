@@ -2,7 +2,8 @@ import os, tempfile, datetime
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
-    accuracy_score, 
+    accuracy_score,
+    log_loss, recall_score, f1_score, precision_score, auc,
     root_mean_squared_error,
     mean_absolute_percentage_error,
     r2_score
@@ -17,6 +18,7 @@ from src.artifacts import MLFlowExp
 from utils.fonctions import get_today_date, load_pickle, save_pickle
 
 import shap
+from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
 
@@ -164,9 +166,34 @@ class ModelPipelineWithMlflow(MLFlowExp):
             self.mlflow.log_metric("R2_score", r2)
 
         elif self.task == "classification":
-            accuracy = accuracy_score(self.y_test, self.y_pred)
-            self.score = {'accuracy': round(accuracy, 3)}
+            
+            accuracy = round(accuracy_score(self.y_test, self.y_pred), 4)
+            precision = round(precision_score(self.y_test, self.y_pred), 4)
+            f1 = round(f1_score(self.y_test, self.y_pred), 4)
+            recall = round(recall_score(self.y_test, self.y_pred), 4)
+            cross_ent = round(log_loss(self.y_test, self.y_pred), 4)
+            # auc_ = auc(self.y_test, self.y_pred)
+            
+            self.score = {'accuracy': accuracy, 'precision': precision, 'recall': recall, 'f1': f1, 'log_loss': cross_ent} #, 'auc_': auc_}
+
+            tn, fp, fn, tp = confusion_matrix(self.y_test, self.y_pred).ravel()
+            fpr = round(fp / (fp + tn), 4)
+            tpr = round(tp / (tp + fn), 4)
+            fnr = round(fn / (fn + tp), 4)
+            tnr = round(tn / (tn + fp), 4)
+
+            self.score.update({'fpr': fpr, 'tpr': tpr, 'fnr': fnr, 'tnr': tnr})
+
+            self.mlflow.log_metric("fpr", fpr)
+            self.mlflow.log_metric("tpr", tpr)
+            self.mlflow.log_metric("fnr", fnr)
+            self.mlflow.log_metric("tnr", tnr)
             self.mlflow.log_metric("accuracy", accuracy)
+            self.mlflow.log_metric("precision", precision)
+            self.mlflow.log_metric("recall", recall)
+            self.mlflow.log_metric("f1-score", f1)
+            self.mlflow.log_metric("bin_cross_ent", cross_ent)
+
         else:
             raise Exception(f"Task {self.task} n'existe pas. Choisissez entre 'classification' ou 'regression'.")
 
@@ -174,13 +201,13 @@ class ModelPipelineWithMlflow(MLFlowExp):
             print(f"Score d'évaluation : {self.score}")
         return self.score
 
-    def run(self, new_data=None, save_shap=True, verbose=True):
+    def run(self, my_run_name='', new_data=None, save_shap=True, verbose=True):
         """
         Enchaîne les étapes de split, entraînement et évaluation.
         """
-        with self.mlflow.start_run() as exp:
+        with self.mlflow.start_run(run_name=my_run_name) as exp:
             
-            self.data_split(verbose=verbose).train(verbose=verbose, run_id=exp.info.run_id).eval(new_data, verbose=verbose)
+            self.data_split(verbose=verbose).train(verbose=verbose, run_id=exp.info.run_id).eval(new_data, verbose=verbose) 
             self.mlflow.log_params({
                 "model": self.model.__class__.__name__,
                 "task": self.task
@@ -188,31 +215,32 @@ class ModelPipelineWithMlflow(MLFlowExp):
             self.mlflow.log_params({**self.model['model'].best_params_})
 
             ## tt ce qui se passe en dehors du context manager est loggé dans une autre experience
-            trainset_apercu = self.mlflow.data.from_pandas(
-                pd.concat(
+            trainset_apercu = pd.concat(
                     [self.X_train.head(5), self.y_train.head(5)], axis=1
-                ),
+                )
+            trainset_apercu['churn_pred'] = self.predict(self.X_train.head(5)).tolist()
+
+            testset_apercu = pd.concat(
+                    [self.X_test.head(5), self.y_test.head(5)], axis=1
+                )
+            testset_apercu['churn_pred'] = self.predict(self.X_test.head(5)).tolist()
+
+            _trainset_apercu = self.mlflow.data.from_pandas(
+                trainset_apercu,
                 targets = self.target_name, # target col 
                 name = "train set sample" # name of the dataset
             )
-            testset_apercu = self.mlflow.data.from_pandas(
-                pd.concat(
-                    [self.X_test.head(5), self.y_test.head(5)], axis=1
-                ),
+            _testset_apercu = self.mlflow.data.from_pandas(
+                testset_apercu,
                 targets = self.target_name, # target col 
                 name = "test set sample" # name of the dataset
             )
 
-            self.mlflow.log_input(trainset_apercu, context='train set sample')
-            self.mlflow.log_input(testset_apercu, context='test set sample')
+            self.mlflow.log_input(_trainset_apercu, context='train set sample')
+            self.mlflow.log_input(_testset_apercu, context='test set sample')
 
-            self.mlflow.log_text(pd.concat(
-                    [self.X_train.head(5), self.y_train.head(5)], axis=1
-                        ).to_markdown(), 'train_overview.md')
-            
-            self.mlflow.log_text(pd.concat(
-                    [self.X_test.head(5), self.y_test.head(5)], axis=1
-                        ).to_markdown(), 'test_overview.md')
+            self.mlflow.log_text(trainset_apercu.to_markdown(), 'train_overview.md')
+            self.mlflow.log_text(testset_apercu.to_markdown(), 'test_overview.md')
 
             if save_shap:
                 self.save_shap_artifacts(self.model, str(exp.info.run_id), str(exp.info.experiment_id))

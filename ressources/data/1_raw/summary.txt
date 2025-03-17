@@ -1,0 +1,1 @@
+On est parti de 4 tables pour arriver à une seule table de 2 280 321 lignes et 22 colonnes. La table finale utilise 420MB de mémoire vive donc x5 pour la traiter avec pandas donc cette partie a été faite avec dask.
