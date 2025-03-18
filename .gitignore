@@ -9,6 +9,7 @@ ressources/data/0_archive/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*/*/*.pyc
 *.py[cod]
 *.pyo
 *.so
@@ -25,4 +26,4 @@ notebooks/.ipynb_checkpoints/
 # Miscellaneous
 .DS_Store
 
-Pres.pptx
+*.pptx

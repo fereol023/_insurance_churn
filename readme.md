@@ -92,5 +92,5 @@ python src/pipelines/train.py
 
 - Precision recall curves on test set : 
 <p align="center">
-    <img src="ressources/img/test_set_precision_recall_curves.png" alt="unbalanced churn" width="300"/>
+    <img src="ressources/img/precision_recall_curves_on_testset.png" alt="unbalanced churn" width="300"/>
 </p>

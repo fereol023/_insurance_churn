@@ -82,7 +82,7 @@ def main():
     st.title("Nettoyage du df - feature engineering")
     ROOT = 'ressources/data/2_intermediary/'
 
-    st.title("Nettoyage") 
+    st.markdown("### Nettoyage") 
 
     _1, _2, _3 = st.columns(3)
     _2.image(load('ressources/data/1_raw/', 'insights_df_raw', 'png'))

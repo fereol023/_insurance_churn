@@ -53,8 +53,8 @@ def main():
     # prediction + lroc (new data)
     # metriques
     # conclusion
-    st.markdown(""""
-        ### Conclusion et ouverture"
+    st.markdown("""
+        ### Conclusion et ouverture
         - *Avec les pistes explorées jusque là nous n'avons pas assez de preuves statistiques pour affirmer que les features proviennent de la même distribution et donc qu'elles encodent la même variable.*
         - *Normalement, les transformations sur de tels datasets ne modifient pas la distribution statistique des variables car on veut garder ces propriétes dans les modèles.*
         - *Soit, effectivement nous sommes en présence de nouvelles features ou alors nous faisons face à un data drift (changement de la distribution statistique pour une même variable en raison de facteurs exogènes).*
